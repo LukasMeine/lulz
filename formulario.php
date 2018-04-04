@@ -19,8 +19,6 @@ Numero1 :<input type="number"
 
 		
 	<?php
-
-echo "hhehehehehehehehehe";
         
 // $_POST é uma array, contendo todos os parâmetros que são enviados pelo método post, e eu só quero mostrar alguma coisa na tela caso essa array não esteja vazia
 // ou seja, quando o usuário mandou alguma coisa =p
