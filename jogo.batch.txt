@@ -1,0 +1,186 @@
+@echo off 
+title 'Game exercicio'
+color 2
+
+
+:Menu
+cls 
+    echo '1. Inicar'
+    echo '2. Intrucoes'
+    echo '3. Sair'
+set /p recebe='Insira o numero da opcao e pressione Enter.'
+    if %recebe%==1 goto 'Iniciar_1'
+    if %recebe%==2 goto 'Instrucoes'
+    if %recebe%==3 goto 'Sair'
+
+:'Sair'
+echo 'Ate a proxima!'
+exit /b
+
+Now for Para ir as instrucoes type in:
+
+:'Instrucoes'
+cls
+    echo. '????????????????????'
+    echo '????aqui estao suas instrucoes????'
+    echo. '????????????????????'
+    echo. ''    
+    echo '?Voce tera 3 opcoes de resposta.'
+    echo.
+    echo '?Apenas 1 resposta estara certa.'
+    echo.
+    echo '?Voce deve acerta no minimo 60 porcento para vencer. Boa Sorte!!!!'
+pause
+goto Menu
+
+:'Iniciar_1'
+cls 
+echo. '???????????????'
+    echo  '???BEM VINDO AO JOGO!????
+    echo. '???????????????'
+    
+echo Quanto eh 10 somando 50?
+echo a - 60 
+echo b - 80
+echo c - 65
+set /p recebe1=Resposta:
+if %recebe1%==a goto ok 
+echo ---------000----------
+echo Resposta errada!!
+goto fim
+:ok
+set /A contador =1
+echo ---------000----------
+echo Resposta Certa !!
+:fim
+echo ---------000----------
+goto Q2
+
+:Q2
+echo ---------Questao 2 ----------
+echo Quanto eh 50 somado 100?
+echo a - 190
+echo b - 150
+echo c - 132
+set /p recebe2=Resposta:
+if %recebe2%==b goto ok
+echo ---------000----------
+echo Resposta errada!!
+goto fim
+:ok
+set /A contador=contador +1
+echo ---------000----------
+echo Resposta Certa!!
+:fim
+echo ---------000----------
+goto Q3
+
+:Q3
+echo ---------Questao 3 ----------
+echo Quantos lados tem um triangulo?
+echo a - 5
+echo b - 3
+echo c - 4
+set /p recebe3=Resposta:
+if %recebe3%==b goto ok
+echo ---------000----------
+echo Resposta errada!!
+goto fim
+:ok
+SET /A contador = contador+1
+echo ---------000----------
+echo Resposta Certa!!
+:fim
+echo ---------000----------
+
+goto Q4 
+
+:Q4
+echo ---------Questao 4 ----------
+echo Quantas letras contem a escrita da bandeira nacional
+echo a - 14    
+echo b - 16
+echo c - 15
+set /p recebe4=Resposta:
+if %recebe4%==c goto ok
+echo ---------000----------
+echo Resposta errada!!
+goto fim
+:ok
+SET /A contador = contador+1
+echo ---------000----------
+echo Resposta Certa!!
+:fim
+echo ---------000----------
+goto Q5
+
+:Q5
+echo ---------Questao 5 ----------
+echo Cipó é :
+echo a - Uma planta
+echo b - Uma comida
+echo c - Um animal
+set /p recebe5=Resposta:
+if %recebe5%==a goto ok
+echo ---------000----------
+echo Resposta errada!!
+echo clique para ver o resultado!!
+pause
+goto deci
+
+:ok
+SET /A contador = contador+1
+echo ---------000----------
+echo Resposta Certa!!
+echo clique para ver o resultado!!
+pause >null
+goto deci
+
+:deci 
+    if %contador%==1 goto condiF
+    if %contador%==0 goto condiF
+    if %contador%==2 goto condiF
+:condiS
+    
+    Set /A     erros = 5-contador
+echo. '?????????????????'
+    echo  '???PARABENS VOCE VENCEU O QUIZ!?
+    echo. '?????????????????'
+    echo. '?????VOCE ACERTOU %CONTADOR%?????'
+    echo. '?????VOCE ERROU %ERROS%??????'
+echo. '?????????????????'
+SET /A contador = contador * 10 * 2  
+echo. '?????????????????'
+    echo            VOCE TEVE %CONTADOR% PONTOS
+echo. '?????????????????'
+echo. '?????????????????'
+    echo           GABARITO DAS ERRADAS
+echo. '?????????????????'
+if %recebe1% NEQ a echo. QUESTAO 1 - LETRA A
+if %recebe2% NEQ b echo. QUESTAO 2 - LETRA B
+if %recebe3% NEQ b echo. QUESTAO 3 - LETRA B
+if %recebe4% NEQ c echo. QUESTAO 4 - LETRA C
+if %recebe5% NEQ a echo. QUESTAO 5 - LETRA A
+
+
+SET /A contador = contador * 0
+SET /A contador = erros * 0
+echo ---------000----------
+pause >null
+goto MENU
+
+:condiF
+    Set /A     erros = 5-contador
+echo. '????????????????'
+    echo  '???FIM DO JOGO VOCE PERDEU!?'
+    echo. '????????????????'
+    echo. '???VOCE ACERTOU %CONTADOR%??????'
+    echo. '???VOCE ERROU %ERROS%???????'
+echo. '????????????????'
+echo. '????????????????'
+    echo  '???    TENTE NOVAMENTE    !?'
+    echo. '????????????????'
+SET /A contador = contador * 0
+SET /A contador = erros * 0
+pause >null
+goto MENU
