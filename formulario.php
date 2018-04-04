@@ -20,6 +20,9 @@ Numero1 :<input type="number"
 		
 	<?php
         
+        //asdjkashkjdhasjh
+        
+        
 // $_POST é uma array, contendo todos os parâmetros que são enviados pelo método post, e eu só quero mostrar alguma coisa na tela caso essa array não esteja vazia
 // ou seja, quando o usuário mandou alguma coisa =p
 // !empty signigica NÃO vazio. No php, o operador ! significa uma negação.
