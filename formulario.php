@@ -18,17 +18,20 @@ Numero1 :<input type="number"
   </form>
 
 		
-	<?php	
+	<?php
+	
+	echo "ilha pig";
+	
 		
-// $_POST é uma array, contendo todos os parâmetros que são enviados pelo método post, e eu só quero mostrar alguma coisa na tela caso essa array não esteja vazia
-// ou seja, quando o usuário mandou alguma coisa =p
-// !empty signigica NÃO vazio. No php, o operador ! significa uma negação.
+// $_POST Ã© uma array, contendo todos os parÃ¢metros que sÃ£o enviados pelo mÃ©todo post, e eu sÃ³ quero mostrar alguma coisa na tela caso essa array nÃ£o esteja vazia
+// ou seja, quando o usuÃ¡rio mandou alguma coisa =p
+// !empty signigica NÃƒO vazio. No php, o operador ! significa uma negaÃ§Ã£o.
 
 if(!empty($_POST)){
 
 
-// foreach é uma estrutura de repetição. Este trecho de código significa: pra cada chave/valor ( $key=>$value) dentro da array $_POST, eu quero verificar se o valor é vazio,
-// e se for, eu quero deletar a posição dele dentro da array $_POST, o removendo por consequência.
+// foreach Ã© uma estrutura de repetiÃ§Ã£o. Este trecho de cÃ³digo significa: pra cada chave/valor ( $key=>$value) dentro da array $_POST, eu quero verificar se o valor Ã© vazio,
+// e se for, eu quero deletar a posiÃ§Ã£o dele dentro da array $_POST, o removendo por consequÃªncia.
 foreach($_POST as $key=>$value){
 if($value == ""){
 
